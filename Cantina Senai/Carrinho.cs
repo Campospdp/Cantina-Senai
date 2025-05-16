@@ -8,12 +8,36 @@ namespace Cantina_Senai
 {
     public class Carrinho
     {
-        private List<Produto> itens = new List<Produto>();
+        private List<Produto> produtos = new List<Produto>();
 
-        public void Adicionar(Produto produto) => itens.Add(produto);
-        public void Remover(Produto produto) => itens.Remove(produto);
-        public double Total() => itens.Sum(p => p.Preco);
-        public List<Produto> Listar() => new List<Produto>(itens);
-        public void Limpar() => itens.Clear();
+        public void Adicionar(Produto novoProduto)
+        {
+            var existente = produtos.FirstOrDefault(p => p.Nome == novoProduto.Nome);
+            if (existente != null)
+            {
+                existente.Quantidade += novoProduto.Quantidade;
+            }
+            else
+            {
+                produtos.Add(novoProduto);
+            }
+        }
+
+        public void Remover(Produto produto)
+        {
+            produtos.Remove(produto);
+        }
+        public void Limpar()
+        {
+            produtos.Clear();
+        }
+        public double Total()
+        {
+            return produtos.Sum(p => p.Total);
+        }
+        public List<Produto> ObterProdutos()
+        {
+            return produtos;
+        }
     }
 }

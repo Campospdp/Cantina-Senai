@@ -43,7 +43,7 @@
             // 
             // listBox1
             // 
-            listBox1.BackColor = SystemColors.Info;
+            listBox1.BackColor = Color.FromArgb(230, 255, 0);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(20, 192);
@@ -53,7 +53,7 @@
             // 
             // listBox2
             // 
-            listBox2.BackColor = SystemColors.Info;
+            listBox2.BackColor = Color.FromArgb(230, 255, 0);
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
             listBox2.Location = new Point(713, 192);
@@ -63,7 +63,7 @@
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = SystemColors.Info;
+            btnAdicionar.BackColor = Color.FromArgb(230, 255, 0);
             btnAdicionar.Location = new Point(20, 163);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(75, 23);
@@ -74,16 +74,15 @@
             // 
             // btnQuantidade
             // 
-            btnQuantidade.BackColor = SystemColors.Info;
+            btnQuantidade.BackColor = Color.FromArgb(230, 255, 0);
             btnQuantidade.Location = new Point(20, 382);
             btnQuantidade.Name = "btnQuantidade";
             btnQuantidade.Size = new Size(120, 23);
             btnQuantidade.TabIndex = 2;
-            btnQuantidade.ValueChanged += btnQuantidade_ValueChanged;
             // 
             // btnRemover
             // 
-            btnRemover.BackColor = SystemColors.Info;
+            btnRemover.BackColor = Color.FromArgb(230, 255, 0);
             btnRemover.Location = new Point(713, 163);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(75, 23);
@@ -94,7 +93,7 @@
             // 
             // btnFinalizar
             // 
-            btnFinalizar.BackColor = SystemColors.Info;
+            btnFinalizar.BackColor = Color.FromArgb(230, 255, 0);
             btnFinalizar.Location = new Point(857, 163);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(75, 23);
@@ -107,9 +106,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(336, -3);
+            pictureBox1.Location = new Point(303, -2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(265, 321);
+            pictureBox1.Size = new Size(329, 339);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -117,7 +116,7 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.ForeColor = SystemColors.Window;
+            lblTotal.ForeColor = Color.Black;
             lblTotal.Location = new Point(713, 384);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(16, 15);
@@ -128,7 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(944, 497);
             Controls.Add(lblTotal);
             Controls.Add(pictureBox1);
