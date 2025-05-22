@@ -14,6 +14,10 @@ namespace Cantina_Senai
         {
             InitializeComponent();
             carrinho = new Carrinho();
+            txtValorPago.Visible = false;
+            txtTroco.Visible =  false;
+            labelV.Visible = false;
+            labelT.Visible = false;
 
             listBox1.DisplayMember = "Nome";
             listBox1.ValueMember = "Preço";
@@ -29,6 +33,9 @@ namespace Cantina_Senai
             listBox1.Items.Add(new Produto { Nome = "Refrigerante Lata", Preco = 4.50 });
             listBox1.Items.Add(new Produto { Nome = "Suco Natural", Preco = 4 });
             listBox1.Items.Add(new Produto { Nome = "Água Mineral", Preco = 2.50 });
+
+            cmbPagamento.Items.AddRange(new string[] { "Dinheiro", "Débito", "Crédito", "Pix", "VR", "VA" });
+            cmbViagem.Items.Add("Sim");
 
             btnQuantidade.Minimum = 1;
             btnQuantidade.Value = 1;
@@ -51,6 +58,7 @@ namespace Cantina_Senai
 
                 AtualizarListBox2();
                 AtualizarTotal();
+                btnQuantidade.Value = 1;
             }
         }
 
@@ -66,11 +74,63 @@ namespace Cantina_Senai
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Total do Pedido: R${carrinho.Total():F2}", "Pedido Finalizado");
+            double total = carrinho.Total();
+            string formaPagamento = cmbPagamento.SelectedItem?.ToString();
+            string nomeCliente = txtnomeCliente.Text;
+            string paraViagem = cmbViagem.SelectedItem?.ToString() ?? "Não";
+
+            if (string.IsNullOrEmpty(nomeCliente))
+            {
+                MessageBox.Show("Por favor, insira o nome do cliente.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(formaPagamento))
+            {
+                MessageBox.Show("Selecione a forma de pagamento.");
+                return;
+            }
+
+            if (formaPagamento == "Dinheiro")
+            {
+                if (!double.TryParse(txtValorPago.Text, out double valorPago))
+                {                    
+                    MessageBox.Show("Valor recebido inválido.");
+                    return;
+                }
+                else
+                {
+                    double troco = valorPago - total;
+                    txtTroco.Text = troco.ToString("F2");
+                    if (valorPago < total)
+                    {
+                        MessageBox.Show($"Valor insuficiente");
+                        return;
+                    }
+                        
+                }   
+            }
+            
+
+            string extrato = $"Cliente: {nomeCliente}\n" +
+                             $"Total: R${total:F2}\n" +
+                             $"Forma de Pagamento: {formaPagamento}\n" +
+                             $"Para Viagem: {paraViagem}\n" +
+                             $"Data e Hora: {DateTime.Now}\n";
+            MessageBox.Show(extrato, "Extrato do Pedido");
+            
+            DateTime agora = DateTime.Now;
+
+            cmbViagem.SelectedIndex = -1;
+            cmbPagamento.SelectedIndex = -1;
+            txtTroco.Clear();
+            txtValorPago.Clear();
+            txtnomeCliente.Clear();
             carrinho.Limpar();
             AtualizarListBox2();
             AtualizarTotal();
         }
+        
         private void AtualizarListBox2()
         {
             listBox2.Items.Clear();
@@ -82,6 +142,15 @@ namespace Cantina_Senai
         private void AtualizarTotal()
         {
             lblTotal.Text = $"Total: R${carrinho.Total():F2}";
+        }
+
+        private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool dinheiro = cmbPagamento.SelectedItem?.ToString() == "Dinheiro";
+            txtValorPago.Visible = dinheiro;
+            txtTroco.Visible = dinheiro;
+            labelV.Visible = dinheiro;
+            labelT.Visible = dinheiro;
         }
     }
 }
