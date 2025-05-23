@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Cantina_Senai
 {
-    public partial class Form1 : Form
+    public partial class TelaVendas : Form
     {
 
         private Carrinho carrinho;
-        public Form1()
+        public TelaVendas()
         {
             InitializeComponent();
             carrinho = new Carrinho();
             txtValorPago.Visible = false;
-            txtTroco.Visible =  false;
+            txtTroco.Visible = false;
             labelV.Visible = false;
             labelT.Visible = false;
 
@@ -94,7 +94,7 @@ namespace Cantina_Senai
             if (formaPagamento == "Dinheiro")
             {
                 if (!double.TryParse(txtValorPago.Text, out double valorPago))
-                {                    
+                {
                     MessageBox.Show("Valor recebido inválido.");
                     return;
                 }
@@ -107,10 +107,16 @@ namespace Cantina_Senai
                         MessageBox.Show($"Valor insuficiente");
                         return;
                     }
-                        
-                }   
+
+                }
             }
-            
+
+            if (listBox2.Items.Count <= 0)
+            {
+                MessageBox.Show("Escolha um item no cardápio");
+                return;
+            }
+
 
             string extrato = $"Cliente: {nomeCliente}\n" +
                              $"Total: R${total:F2}\n" +
@@ -118,7 +124,7 @@ namespace Cantina_Senai
                              $"Para Viagem: {paraViagem}\n" +
                              $"Data e Hora: {DateTime.Now}\n";
             MessageBox.Show(extrato, "Extrato do Pedido");
-            
+
             DateTime agora = DateTime.Now;
 
             cmbViagem.SelectedIndex = -1;
@@ -130,7 +136,7 @@ namespace Cantina_Senai
             AtualizarListBox2();
             AtualizarTotal();
         }
-        
+
         private void AtualizarListBox2()
         {
             listBox2.Items.Clear();
@@ -151,6 +157,12 @@ namespace Cantina_Senai
             txtTroco.Visible = dinheiro;
             labelV.Visible = dinheiro;
             labelT.Visible = dinheiro;
+        }
+
+        private void btnBalcao_Click(object sender, EventArgs e)
+        {
+            Balcao minhaNovaJanela = new Balcao();
+            minhaNovaJanela.Show();
         }
     }
 }

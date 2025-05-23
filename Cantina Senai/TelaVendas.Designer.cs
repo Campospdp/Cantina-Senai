@@ -1,6 +1,6 @@
 ﻿namespace Cantina_Senai
 {
-    partial class Form1
+    partial class TelaVendas
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaVendas));
             listBox1 = new ListBox();
             listBox2 = new ListBox();
             btnAdicionar = new Button();
@@ -51,6 +51,8 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            btnBalcao = new Button();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -126,7 +128,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(344, -150);
+            pictureBox1.Location = new Point(-79, -150);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(376, 384);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -281,12 +283,35 @@
             label6.TabIndex = 27;
             label6.Text = "\U0001f6d2";
             // 
-            // Form1
+            // btnBalcao
+            // 
+            btnBalcao.BackColor = Color.FromArgb(230, 255, 0);
+            btnBalcao.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBalcao.Location = new Point(82, 484);
+            btnBalcao.Name = "btnBalcao";
+            btnBalcao.Size = new Size(86, 27);
+            btnBalcao.TabIndex = 28;
+            btnBalcao.Text = "Balcão";
+            btnBalcao.UseVisualStyleBackColor = false;
+            btnBalcao.Click += btnBalcao_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(40, 490);
+            label7.Name = "label7";
+            label7.Size = new Size(41, 17);
+            label7.TabIndex = 29;
+            label7.Text = "ADM:";
+            // 
+            // TelaVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
+            Controls.Add(label7);
+            Controls.Add(btnBalcao);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -310,7 +335,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Name = "Form1";
+            Name = "TelaVendas";
             ((System.ComponentModel.ISupportInitialize)btnQuantidade).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -340,5 +365,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button btnBalcao;
+        private Label label7;
     }
 }
