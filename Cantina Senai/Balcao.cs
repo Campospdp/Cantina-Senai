@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Cantina_Senai.Pedido;
 
 namespace Cantina_Senai
 {
@@ -19,25 +20,27 @@ namespace Cantina_Senai
 
         private void btnEntregue_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (listPedido.SelectedItem is Pedido pedidoSelecionado)
             {
-                listView1.SelectedItems[0].SubItems[1].Text = "Pedido Finalizado";
+                pedidoSelecionado.Status = "Entregue";
+                listEntregues.Items.Add(pedidoSelecionado);
+                listPedido.Items.Remove(pedidoSelecionado);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Balcao_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox1.Text))
+            listPedido.Items.Clear();
+            foreach (var pedido in BaseDePedidos.Pedidos)
             {
-                string[] linha = { textBox1.Text, "Pendente", DateTime.Now.ToString("dd/MM/yyyy HH:mm") };
-                ListViewItem item = new ListViewItem(linha);
-                listView1.Items.Add(item);
-                textBox1.Clear();
+                listPedido.Items.Add(pedido);
             }
+        }
+
+        private void btnTelaVendas_Click(object sender, EventArgs e)
+        {
+            TelaVendas minhaNovaJanela = new TelaVendas();
+            minhaNovaJanela.Show();
         }
     }
 }
-
-
-
-//listBox3.SelectedItems[0].SubItems[1].Text = "Pedido Finalizado";

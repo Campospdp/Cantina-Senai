@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Cantina_Senai.Pedido;
 
 namespace Cantina_Senai
 {
@@ -19,20 +20,20 @@ namespace Cantina_Senai
             labelV.Visible = false;
             labelT.Visible = false;
 
-            listBox1.DisplayMember = "Nome";
-            listBox1.ValueMember = "Preço";
-            listBox2.DisplayMember = "ToString";
+            listCardapio.DisplayMember = "Nome";
+            listCardapio.ValueMember = "Preço";
+            listCarrinho.DisplayMember = "ToString";
 
-            listBox1.Items.Add(new Produto { Nome = "Pão de Queijo", Preco = 3.50 });
-            listBox1.Items.Add(new Produto { Nome = "Coxinha", Preco = 5 });
-            listBox1.Items.Add(new Produto { Nome = "Pastel de Carne", Preco = 6 });
-            listBox1.Items.Add(new Produto { Nome = "Pastel de Queijo", Preco = 5.50 });
-            listBox1.Items.Add(new Produto { Nome = "Hambúrguer Simples", Preco = 8 });
-            listBox1.Items.Add(new Produto { Nome = "Hambúrguer com Queijo", Preco = 9 });
-            listBox1.Items.Add(new Produto { Nome = "X-Tudo", Preco = 12 });
-            listBox1.Items.Add(new Produto { Nome = "Refrigerante Lata", Preco = 4.50 });
-            listBox1.Items.Add(new Produto { Nome = "Suco Natural", Preco = 4 });
-            listBox1.Items.Add(new Produto { Nome = "Água Mineral", Preco = 2.50 });
+            listCardapio.Items.Add(new Produto { Nome = "Pão de Queijo", Preco = 3.50 });
+            listCardapio.Items.Add(new Produto { Nome = "Coxinha", Preco = 5 });
+            listCardapio.Items.Add(new Produto { Nome = "Pastel de Carne", Preco = 6 });
+            listCardapio.Items.Add(new Produto { Nome = "Pastel de Queijo", Preco = 5.50 });
+            listCardapio.Items.Add(new Produto { Nome = "Hambúrguer Simples", Preco = 8 });
+            listCardapio.Items.Add(new Produto { Nome = "Hambúrguer com Queijo", Preco = 9 });
+            listCardapio.Items.Add(new Produto { Nome = "X-Tudo", Preco = 12 });
+            listCardapio.Items.Add(new Produto { Nome = "Refrigerante Lata", Preco = 4.50 });
+            listCardapio.Items.Add(new Produto { Nome = "Suco Natural", Preco = 4 });
+            listCardapio.Items.Add(new Produto { Nome = "Água Mineral", Preco = 2.50 });
 
             cmbPagamento.Items.AddRange(new string[] { "Dinheiro", "Débito", "Crédito", "Pix", "VR", "VA" });
             cmbViagem.Items.Add("Sim");
@@ -43,7 +44,7 @@ namespace Cantina_Senai
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is Produto produtoSelecionado)
+            if (listCardapio.SelectedItem is Produto produtoSelecionado)
             {
                 int quantidade = (int)btnQuantidade.Value;
 
@@ -64,7 +65,7 @@ namespace Cantina_Senai
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedItem is Produto produto)
+            if (listCarrinho.SelectedItem is Produto produto)
             {
                 carrinho.Remover(produto);
                 AtualizarListBox2();
@@ -111,7 +112,7 @@ namespace Cantina_Senai
                 }
             }
 
-            if (listBox2.Items.Count <= 0)
+            if (listCarrinho.Items.Count <= 0)
             {
                 MessageBox.Show("Escolha um item no cardápio");
                 return;
@@ -127,6 +128,17 @@ namespace Cantina_Senai
 
             DateTime agora = DateTime.Now;
 
+            Pedido novoPedido = new Pedido
+            {
+                Cliente = nomeCliente,
+                FormaPagamento = formaPagamento,
+                ParaViagem = paraViagem,
+                Hora = agora.ToShortTimeString(),
+                Itens = string.Join(" ,", carrinho.ObterProdutos().Select(p => $"{p.Quantidade} x {p.Nome} - R$ {p.Preco * p.Quantidade:F2}"))
+            };
+
+            BaseDePedidos.Pedidos.Add(novoPedido);
+
             cmbViagem.SelectedIndex = -1;
             cmbPagamento.SelectedIndex = -1;
             txtTroco.Clear();
@@ -139,10 +151,10 @@ namespace Cantina_Senai
 
         private void AtualizarListBox2()
         {
-            listBox2.Items.Clear();
+            listCarrinho.Items.Clear();
             foreach (var item in carrinho.ObterProdutos())
             {
-                listBox2.Items.Add(item);
+                listCarrinho.Items.Add(item);
             }
         }
         private void AtualizarTotal()

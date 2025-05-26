@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaVendas));
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
+            listCardapio = new ListBox();
+            listCarrinho = new ListBox();
             btnAdicionar = new Button();
             btnQuantidade = new NumericUpDown();
             btnRemover = new Button();
@@ -57,27 +57,27 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // listBox1
+            // listCardapio
             // 
-            listBox1.BackColor = Color.FromArgb(230, 255, 0);
-            listBox1.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 17;
-            listBox1.Location = new Point(87, 228);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(250, 191);
-            listBox1.TabIndex = 1;
+            listCardapio.BackColor = Color.FromArgb(230, 255, 0);
+            listCardapio.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listCardapio.FormattingEnabled = true;
+            listCardapio.ItemHeight = 17;
+            listCardapio.Location = new Point(87, 228);
+            listCardapio.Name = "listCardapio";
+            listCardapio.Size = new Size(250, 191);
+            listCardapio.TabIndex = 1;
             // 
-            // listBox2
+            // listCarrinho
             // 
-            listBox2.BackColor = Color.FromArgb(230, 255, 0);
-            listBox2.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 17;
-            listBox2.Location = new Point(727, 228);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(250, 191);
-            listBox2.TabIndex = 4;
+            listCarrinho.BackColor = Color.FromArgb(230, 255, 0);
+            listCarrinho.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listCarrinho.FormattingEnabled = true;
+            listCarrinho.ItemHeight = 17;
+            listCarrinho.Location = new Point(727, 228);
+            listCarrinho.Name = "listCarrinho";
+            listCarrinho.Size = new Size(250, 191);
+            listCarrinho.TabIndex = 4;
             // 
             // btnAdicionar
             // 
@@ -128,7 +128,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-79, -150);
+            pictureBox1.Location = new Point(345, -55);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(376, 384);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -267,7 +267,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Inter", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(164, 202);
+            label5.Location = new Point(162, 202);
             label5.Name = "label5";
             label5.Size = new Size(33, 23);
             label5.TabIndex = 26;
@@ -277,7 +277,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Inter", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(812, 202);
+            label6.Location = new Point(799, 202);
             label6.Name = "label6";
             label6.Size = new Size(33, 23);
             label6.TabIndex = 27;
@@ -330,8 +330,8 @@
             Controls.Add(btnRemover);
             Controls.Add(btnQuantidade);
             Controls.Add(btnAdicionar);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
+            Controls.Add(listCarrinho);
+            Controls.Add(listCardapio);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -343,8 +343,8 @@
         }
 
         #endregion
-        private ListBox listBox1;
-        private ListBox listBox2;
+        private ListBox listCardapio;
+        private ListBox listCarrinho;
         private Button btnAdicionar;
         private NumericUpDown btnQuantidade;
         private Button btnRemover;
