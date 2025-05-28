@@ -25,22 +25,36 @@ namespace Cantina_Senai
                 pedidoSelecionado.Status = "Entregue";
                 listEntregues.Items.Add(pedidoSelecionado);
                 listPedido.Items.Remove(pedidoSelecionado);
+                Serializar.Salvar(BaseDePedidos.Pedidos);
             }
         }
 
         private void Balcao_Load(object sender, EventArgs e)
         {
             listPedido.Items.Clear();
+            BaseDePedidos.Pedidos = Serializar.Carregar();
             foreach (var pedido in BaseDePedidos.Pedidos)
             {
-                listPedido.Items.Add(pedido);
+                if(pedido.Status != "Entregue")
+                    listPedido.Items.Add(pedido);
+                else
+                    listEntregues.Items.Add(pedido);
             }
         }
 
         private void btnTelaVendas_Click(object sender, EventArgs e)
         {
-            TelaVendas minhaNovaJanela = new TelaVendas();
-            minhaNovaJanela.Show();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is TelaVendas)
+                {
+                    f.Focus();
+                    return;
+                }
+            }
+
+            TelaVendas nova = new TelaVendas();
+            nova.Show();
         }
     }
 }

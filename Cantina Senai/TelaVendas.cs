@@ -131,13 +131,13 @@ namespace Cantina_Senai
             Pedido novoPedido = new Pedido
             {
                 Cliente = nomeCliente,
-                FormaPagamento = formaPagamento,
                 ParaViagem = paraViagem,
                 Hora = agora.ToShortTimeString(),
                 Itens = string.Join(" ,", carrinho.ObterProdutos().Select(p => $"{p.Quantidade} x {p.Nome} - R$ {p.Preco * p.Quantidade:F2}"))
             };
 
             BaseDePedidos.Pedidos.Add(novoPedido);
+            Serializar.Salvar(BaseDePedidos.Pedidos);
 
             cmbViagem.SelectedIndex = -1;
             cmbPagamento.SelectedIndex = -1;
@@ -173,8 +173,17 @@ namespace Cantina_Senai
 
         private void btnBalcao_Click(object sender, EventArgs e)
         {
-            Balcao minhaNovaJanela = new Balcao();
-            minhaNovaJanela.Show();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Balcao)
+                {
+                    f.Focus();
+                    return;
+                }
+            }
+
+            Balcao nova = new Balcao();
+            nova.Show();
         }
     }
 }

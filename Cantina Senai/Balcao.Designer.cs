@@ -38,6 +38,7 @@
             label7 = new Label();
             btnTelaVendas = new Button();
             label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // listEntregues
             // 
-            listEntregues.BackColor = Color.FromArgb(243, 241, 238);
+            listEntregues.BackColor = Color.FromArgb(230, 255, 0);
             listEntregues.BorderStyle = BorderStyle.None;
             listEntregues.Enabled = false;
             listEntregues.ForeColor = SystemColors.GrayText;
@@ -141,6 +142,16 @@
             label2.TabIndex = 32;
             label2.Text = "📖";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(744, 195);
+            label3.Name = "label3";
+            label3.Size = new Size(27, 18);
+            label3.TabIndex = 33;
+            label3.Text = "✅";
+            // 
             // Balcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -156,6 +167,7 @@
             Controls.Add(listEntregues);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
+            Controls.Add(label3);
             Name = "Balcao";
             Text = "Balcão";
             Load += Balcao_Load;
@@ -175,5 +187,6 @@
         private Label label7;
         private Button btnTelaVendas;
         private Label label2;
+        private Label label3;
     }
 }
