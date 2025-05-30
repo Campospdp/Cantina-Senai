@@ -177,13 +177,13 @@ namespace Cantina_Senai
             {
                 if (f is Balcao)
                 {
-                    f.Focus();
-                    return;
+                    f.Close();
+                    break;
                 }
             }
 
-            Balcao nova = new Balcao();
-            nova.Show();
+            Balcao novaJanela = new Balcao();
+            novaJanela.Show();
         }
     }
 }
