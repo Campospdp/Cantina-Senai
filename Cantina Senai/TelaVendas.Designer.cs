@@ -51,8 +51,10 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            btnBalcao = new Button();
+            btnBalcaoVendas = new Button();
             label7 = new Label();
+            label8 = new Label();
+            btnCozinhaVendas = new Button();
             ((System.ComponentModel.ISupportInitialize)btnQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -283,17 +285,17 @@
             label6.TabIndex = 27;
             label6.Text = "\U0001f6d2";
             // 
-            // btnBalcao
+            // btnBalcaoVendas
             // 
-            btnBalcao.BackColor = Color.FromArgb(230, 255, 0);
-            btnBalcao.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBalcao.Location = new Point(82, 484);
-            btnBalcao.Name = "btnBalcao";
-            btnBalcao.Size = new Size(86, 27);
-            btnBalcao.TabIndex = 28;
-            btnBalcao.Text = "Balcão";
-            btnBalcao.UseVisualStyleBackColor = false;
-            btnBalcao.Click += btnBalcao_Click;
+            btnBalcaoVendas.BackColor = Color.FromArgb(230, 255, 0);
+            btnBalcaoVendas.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBalcaoVendas.Location = new Point(82, 484);
+            btnBalcaoVendas.Name = "btnBalcaoVendas";
+            btnBalcaoVendas.Size = new Size(86, 27);
+            btnBalcaoVendas.TabIndex = 28;
+            btnBalcaoVendas.Text = "Balcão";
+            btnBalcaoVendas.UseVisualStyleBackColor = false;
+            btnBalcaoVendas.Click += btnBalcao_Click;
             // 
             // label7
             // 
@@ -304,14 +306,35 @@
             label7.TabIndex = 29;
             label7.Text = "ADM:";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(40, 516);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 17);
+            label8.TabIndex = 30;
+            label8.Text = "ADM:";
+            // 
+            // btnCozinhaVendas
+            // 
+            btnCozinhaVendas.Location = new Point(87, 513);
+            btnCozinhaVendas.Name = "btnCozinhaVendas";
+            btnCozinhaVendas.Size = new Size(75, 23);
+            btnCozinhaVendas.TabIndex = 31;
+            btnCozinhaVendas.Text = "Cozinha";
+            btnCozinhaVendas.UseVisualStyleBackColor = true;
+            btnCozinhaVendas.Click += button1_Click;
+            // 
             // TelaVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
+            Controls.Add(btnCozinhaVendas);
+            Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(btnBalcao);
+            Controls.Add(btnBalcaoVendas);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -365,7 +388,9 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btnBalcao;
+        private Button btnBalcaoVendas;
         private Label label7;
+        private Label label8;
+        private Button btnCozinhaVendas;
     }
 }

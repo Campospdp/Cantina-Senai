@@ -22,6 +22,12 @@ namespace Cantina_Senai
         {
             if (listPedido.SelectedItem is Pedido pedidoSelecionado)
             {
+               if (pedidoSelecionado.Status != "Pronto")
+                {
+                    MessageBox.Show("Este pedido ainda não foi entregue pela cozinha.");
+                    return;
+                }
+
                 pedidoSelecionado.Status = "Entregue";
                 listEntregues.Items.Add(pedidoSelecionado);
                 listPedido.Items.Remove(pedidoSelecionado);
@@ -35,7 +41,7 @@ namespace Cantina_Senai
             BaseDePedidos.Pedidos = Serializar.Carregar();
             foreach (var pedido in BaseDePedidos.Pedidos)
             {
-                if(pedido.Status != "Entregue")
+                if (pedido.Status != "Entregue")
                     listPedido.Items.Add(pedido);
                 else
                     listEntregues.Items.Add(pedido);
@@ -53,8 +59,23 @@ namespace Cantina_Senai
                 }
             }
 
-            TelaVendas nova = new TelaVendas();
-            nova.Show();
+            TelaVendas novaJanela = new TelaVendas();
+            novaJanela.Show();
+        }
+
+        private void btnCozinha_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Cozinha)
+                {
+                    f.Close(); 
+                    break;
+                }
+            }
+
+            Cozinha novaJanela = new Cozinha();
+            novaJanela.Show();
         }
     }
 }

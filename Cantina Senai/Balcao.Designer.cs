@@ -36,9 +36,11 @@
             btnEntregue = new Button();
             listPedido = new ListBox();
             label7 = new Label();
-            btnTelaVendas = new Button();
+            btnTelaVendasBalcao = new Button();
             label2 = new Label();
             label3 = new Label();
+            label4 = new Label();
+            btnCozinhaBalcao = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -121,16 +123,16 @@
             label7.TabIndex = 30;
             label7.Text = "ADM:";
             // 
-            // btnTelaVendas
+            // btnTelaVendasBalcao
             // 
-            btnTelaVendas.BackColor = Color.FromArgb(230, 255, 0);
-            btnTelaVendas.Location = new Point(59, 6);
-            btnTelaVendas.Name = "btnTelaVendas";
-            btnTelaVendas.Size = new Size(75, 23);
-            btnTelaVendas.TabIndex = 31;
-            btnTelaVendas.Text = "Vendas";
-            btnTelaVendas.UseVisualStyleBackColor = false;
-            btnTelaVendas.Click += btnTelaVendas_Click;
+            btnTelaVendasBalcao.BackColor = Color.FromArgb(230, 255, 0);
+            btnTelaVendasBalcao.Location = new Point(59, 6);
+            btnTelaVendasBalcao.Name = "btnTelaVendasBalcao";
+            btnTelaVendasBalcao.Size = new Size(75, 23);
+            btnTelaVendasBalcao.TabIndex = 31;
+            btnTelaVendasBalcao.Text = "Vendas";
+            btnTelaVendasBalcao.UseVisualStyleBackColor = false;
+            btnTelaVendasBalcao.Click += btnTelaVendas_Click;
             // 
             // label2
             // 
@@ -152,13 +154,35 @@
             label3.TabIndex = 33;
             label3.Text = "✅";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(12, 37);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 17);
+            label4.TabIndex = 34;
+            label4.Text = "ADM:";
+            // 
+            // btnCozinhaBalcao
+            // 
+            btnCozinhaBalcao.Location = new Point(59, 31);
+            btnCozinhaBalcao.Name = "btnCozinhaBalcao";
+            btnCozinhaBalcao.Size = new Size(75, 23);
+            btnCozinhaBalcao.TabIndex = 35;
+            btnCozinhaBalcao.Text = "Cozinha";
+            btnCozinhaBalcao.UseVisualStyleBackColor = true;
+            btnCozinhaBalcao.Click += btnCozinha_Click;
+            // 
             // Balcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
-            Controls.Add(btnTelaVendas);
+            Controls.Add(btnCozinhaBalcao);
+            Controls.Add(label4);
+            Controls.Add(btnTelaVendasBalcao);
             Controls.Add(label7);
             Controls.Add(listPedido);
             Controls.Add(btnEntregue);
@@ -185,8 +209,10 @@
         private Button btnEntregue;
         private ListBox listPedido;
         private Label label7;
-        private Button btnTelaVendas;
+        private Button btnTelaVendasBalcao;
         private Label label2;
         private Label label3;
+        private Label label4;
+        private Button btnCozinhaBalcao;
     }
 }

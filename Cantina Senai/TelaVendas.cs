@@ -133,7 +133,8 @@ namespace Cantina_Senai
                 Cliente = nomeCliente,
                 ParaViagem = paraViagem,
                 Hora = agora.ToShortTimeString(),
-                Itens = string.Join(" ,", carrinho.ObterProdutos().Select(p => $"{p.Quantidade} x {p.Nome} - R$ {p.Preco * p.Quantidade:F2}"))
+                Itens = string.Join(" ,", carrinho.ObterProdutos().Select(p => $"{p.Quantidade} x {p.Nome} - R$ {p.Preco * p.Quantidade:F2}")),
+                Status = "Preparando"
             };
 
             BaseDePedidos.Pedidos.Add(novoPedido);
@@ -183,6 +184,21 @@ namespace Cantina_Senai
             }
 
             Balcao novaJanela = new Balcao();
+            novaJanela.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Cozinha)
+                {
+                    f.Close(); 
+                    break;
+                }
+            }
+
+            Cozinha novaJanela = new Cozinha();
             novaJanela.Show();
         }
     }
