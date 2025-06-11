@@ -48,7 +48,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(348, -104);
+            pictureBox1.Location = new Point(343, -159);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(376, 384);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 9);
+            label7.Location = new Point(12, 12);
             label7.Name = "label7";
             label7.Size = new Size(41, 17);
             label7.TabIndex = 30;
@@ -126,6 +126,7 @@
             // btnTelaVendasBalcao
             // 
             btnTelaVendasBalcao.BackColor = Color.FromArgb(230, 255, 0);
+            btnTelaVendasBalcao.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTelaVendasBalcao.Location = new Point(59, 6);
             btnTelaVendasBalcao.Name = "btnTelaVendasBalcao";
             btnTelaVendasBalcao.Size = new Size(75, 23);
@@ -158,7 +159,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 37);
+            label4.Location = new Point(12, 35);
             label4.Name = "label4";
             label4.Size = new Size(41, 17);
             label4.TabIndex = 34;
@@ -166,12 +167,14 @@
             // 
             // btnCozinhaBalcao
             // 
+            btnCozinhaBalcao.BackColor = Color.FromArgb(230, 255, 0);
+            btnCozinhaBalcao.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCozinhaBalcao.Location = new Point(59, 31);
             btnCozinhaBalcao.Name = "btnCozinhaBalcao";
             btnCozinhaBalcao.Size = new Size(75, 23);
             btnCozinhaBalcao.TabIndex = 35;
             btnCozinhaBalcao.Text = "Cozinha";
-            btnCozinhaBalcao.UseVisualStyleBackColor = true;
+            btnCozinhaBalcao.UseVisualStyleBackColor = false;
             btnCozinhaBalcao.Click += btnCozinha_Click;
             // 
             // Balcao

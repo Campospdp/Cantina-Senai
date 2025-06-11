@@ -130,7 +130,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(345, -55);
+            pictureBox1.Location = new Point(343, -159);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(376, 384);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -288,10 +288,10 @@
             // btnBalcaoVendas
             // 
             btnBalcaoVendas.BackColor = Color.FromArgb(230, 255, 0);
-            btnBalcaoVendas.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBalcaoVendas.Location = new Point(82, 484);
+            btnBalcaoVendas.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBalcaoVendas.Location = new Point(59, 9);
             btnBalcaoVendas.Name = "btnBalcaoVendas";
-            btnBalcaoVendas.Size = new Size(86, 27);
+            btnBalcaoVendas.Size = new Size(75, 23);
             btnBalcaoVendas.TabIndex = 28;
             btnBalcaoVendas.Text = "Balcão";
             btnBalcaoVendas.UseVisualStyleBackColor = false;
@@ -300,7 +300,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(40, 490);
+            label7.Location = new Point(12, 12);
             label7.Name = "label7";
             label7.Size = new Size(41, 17);
             label7.TabIndex = 29;
@@ -309,7 +309,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(40, 516);
+            label8.Location = new Point(12, 35);
             label8.Name = "label8";
             label8.Size = new Size(41, 17);
             label8.TabIndex = 30;
@@ -317,12 +317,14 @@
             // 
             // btnCozinhaVendas
             // 
-            btnCozinhaVendas.Location = new Point(87, 513);
+            btnCozinhaVendas.BackColor = Color.FromArgb(230, 255, 0);
+            btnCozinhaVendas.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCozinhaVendas.Location = new Point(59, 32);
             btnCozinhaVendas.Name = "btnCozinhaVendas";
             btnCozinhaVendas.Size = new Size(75, 23);
             btnCozinhaVendas.TabIndex = 31;
             btnCozinhaVendas.Text = "Cozinha";
-            btnCozinhaVendas.UseVisualStyleBackColor = true;
+            btnCozinhaVendas.UseVisualStyleBackColor = false;
             btnCozinhaVendas.Click += button1_Click;
             // 
             // TelaVendas

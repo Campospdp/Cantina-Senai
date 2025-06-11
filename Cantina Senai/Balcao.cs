@@ -22,12 +22,6 @@ namespace Cantina_Senai
         {
             if (listPedido.SelectedItem is Pedido pedidoSelecionado)
             {
-               if (pedidoSelecionado.Status != "Pronto")
-                {
-                    MessageBox.Show("Este pedido ainda não foi entregue pela cozinha.");
-                    return;
-                }
-
                 pedidoSelecionado.Status = "Entregue";
                 listEntregues.Items.Add(pedidoSelecionado);
                 listPedido.Items.Remove(pedidoSelecionado);
@@ -39,15 +33,38 @@ namespace Cantina_Senai
         {
             listPedido.Items.Clear();
             BaseDePedidos.Pedidos = Serializar.Carregar();
+
             foreach (var pedido in BaseDePedidos.Pedidos)
             {
-                if (pedido.Status != "Entregue")
-                    listPedido.Items.Add(pedido);
-                else
+                if (pedido.Status == "Entregue")
+                {
                     listEntregues.Items.Add(pedido);
+                }
+                else if (pedido.Status == "Pronto" || !ContemItemChapa(pedido.Itens))
+                {
+                    listPedido.Items.Add(pedido);
+                }
             }
         }
+        private bool ContemItemChapa(string itens)
+        {
+            string[] chapa = new string[]
+            {
+        "Pastel de Carne",
+        "Pastel de Queijo",
+        "Hambúrguer Simples",
+        "Hambúrguer com Queijo",
+        "X-Tudo"
+            };
 
+            foreach (var item in chapa)
+            {
+                if (itens.Contains(item))
+                    return true;
+            }
+
+            return false;
+        }
         private void btnTelaVendas_Click(object sender, EventArgs e)
         {
             foreach (Form f in Application.OpenForms)

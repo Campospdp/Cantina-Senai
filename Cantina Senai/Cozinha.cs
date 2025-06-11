@@ -18,11 +18,6 @@ namespace Cantina_Senai
             listCozinha.DisplayMember = "ToString";
         }
 
-        //private readonly List<string> itenschapa = new List<string>
-        //{
-        //    "Pastel de Carne", "Pastel de Queijo", "Hámburguer Simples", "Hámburguer com Queijo", "X-Tudo"
-        //};
-
         private void Cozinha_Load(object sender, EventArgs e)
         {
             listCozinha.Items.Clear();
@@ -40,13 +35,13 @@ namespace Cantina_Senai
         private bool ContemItemChapa(string itens)
         {
             string[] chapa = new string[]
-            {
-                "Pastel de Carne",
-                "Pastel de Queijo",
-                "Hámburguer Simples",
-                "Hámburguer com Queijo",
-                "X-Tudo"
-            };
+        {
+        "Pastel de Carne",
+        "Pastel de Queijo",
+        "Hambúrguer Simples",
+        "Hambúrguer com Queijo",
+        "X-Tudo"
+        };
 
             foreach (var item in chapa)
             {
@@ -55,7 +50,6 @@ namespace Cantina_Senai
             }
 
             return false;
-
         }
 
         private void btnEntregarChapa_Click_1(object sender, EventArgs e)
