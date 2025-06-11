@@ -36,11 +36,11 @@ namespace Cantina_Senai
         {
             string[] chapa = new string[]
         {
-        "Pastel de Carne",
-        "Pastel de Queijo",
-        "Hambúrguer Simples",
-        "Hambúrguer com Queijo",
-        "X-Tudo"
+            "Pastel de Carne",
+            "Pastel de Queijo",
+            "Hambúrguer Simples",
+            "Hambúrguer com Queijo",
+            "X-Tudo"
         };
 
             foreach (var item in chapa)

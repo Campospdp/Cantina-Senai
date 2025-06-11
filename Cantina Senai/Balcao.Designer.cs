@@ -41,6 +41,7 @@
             label3 = new Label();
             label4 = new Label();
             btnCozinhaBalcao = new Button();
+            btnChamada = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -177,12 +178,23 @@
             btnCozinhaBalcao.UseVisualStyleBackColor = false;
             btnCozinhaBalcao.Click += btnCozinha_Click;
             // 
+            // btnChamada
+            // 
+            btnChamada.Location = new Point(55, 60);
+            btnChamada.Name = "btnChamada";
+            btnChamada.Size = new Size(79, 51);
+            btnChamada.TabIndex = 36;
+            btnChamada.Text = "button1";
+            btnChamada.UseVisualStyleBackColor = true;
+            btnChamada.Click += btnChamada_Click;
+            // 
             // Balcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
+            Controls.Add(btnChamada);
             Controls.Add(btnCozinhaBalcao);
             Controls.Add(label4);
             Controls.Add(btnTelaVendasBalcao);
@@ -217,5 +229,6 @@
         private Label label3;
         private Label label4;
         private Button btnCozinhaBalcao;
+        private Button btnChamada;
     }
 }

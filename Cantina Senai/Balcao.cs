@@ -50,11 +50,11 @@ namespace Cantina_Senai
         {
             string[] chapa = new string[]
             {
-        "Pastel de Carne",
-        "Pastel de Queijo",
-        "Hambúrguer Simples",
-        "Hambúrguer com Queijo",
-        "X-Tudo"
+                "Pastel de Carne",
+                "Pastel de Queijo",
+                "Hambúrguer Simples",
+                "Hambúrguer com Queijo",
+                "X-Tudo"
             };
 
             foreach (var item in chapa)
@@ -86,12 +86,27 @@ namespace Cantina_Senai
             {
                 if (f is Cozinha)
                 {
-                    f.Close(); 
+                    f.Close();
                     break;
                 }
             }
 
             Cozinha novaJanela = new Cozinha();
+            novaJanela.Show();
+        }
+
+        private void btnChamada_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Chamada)
+                {
+                    f.Focus();
+                    return;
+                }
+            }
+
+            Chamada novaJanela = new Chamada();
             novaJanela.Show();
         }
     }
