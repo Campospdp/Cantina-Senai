@@ -47,5 +47,35 @@ namespace Cantina_Senai
             TelaVendas novaJanela = new TelaVendas();
             novaJanela.Show();
         }
+
+        private void btnBalcao_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Balcao)
+                {
+                    f.Close();
+                    break;
+                }
+            }
+
+            Balcao novaJanela = new Balcao();
+            novaJanela.Show();
+        }
+
+        private void btnCozinha_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Cozinha)
+                {
+                    f.Close();
+                    break;
+                }
+            }
+
+            Cozinha novaJanela = new Cozinha();
+            novaJanela.Show();
+        }
     }
 }
