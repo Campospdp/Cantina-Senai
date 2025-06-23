@@ -37,6 +37,8 @@
             label7 = new Label();
             label1 = new Label();
             label2 = new Label();
+            btnChamada = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             // 
             btnVendasCozinha.BackColor = Color.FromArgb(230, 255, 0);
             btnVendasCozinha.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVendasCozinha.Location = new Point(61, 32);
+            btnVendasCozinha.Location = new Point(61, 29);
             btnVendasCozinha.Name = "btnVendasCozinha";
             btnVendasCozinha.Size = new Size(75, 23);
             btnVendasCozinha.TabIndex = 15;
@@ -102,7 +104,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 12);
+            label7.Location = new Point(14, 12);
             label7.Name = "label7";
             label7.Size = new Size(41, 17);
             label7.TabIndex = 30;
@@ -112,7 +114,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 35);
+            label1.Location = new Point(14, 35);
             label1.Name = "label1";
             label1.Size = new Size(41, 17);
             label1.TabIndex = 31;
@@ -128,11 +130,35 @@
             label2.TabIndex = 32;
             label2.Text = "\U0001f9d1‍🍳\U0001f9d1‍🍳\U0001f9d1‍🍳";
             // 
+            // btnChamada
+            // 
+            btnChamada.BackColor = Color.FromArgb(230, 255, 0);
+            btnChamada.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnChamada.Location = new Point(61, 52);
+            btnChamada.Name = "btnChamada";
+            btnChamada.Size = new Size(75, 23);
+            btnChamada.TabIndex = 33;
+            btnChamada.Text = "Chamada";
+            btnChamada.UseVisualStyleBackColor = false;
+            btnChamada.Click += button1_Click_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(14, 58);
+            label3.Name = "label3";
+            label3.Size = new Size(41, 17);
+            label3.TabIndex = 34;
+            label3.Text = "ADM:";
+            // 
             // Cozinha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1079, 563);
+            Controls.Add(label3);
+            Controls.Add(btnChamada);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label7);
@@ -159,5 +185,7 @@
         private Label label7;
         private Label label1;
         private Label label2;
+        private Button btnChamada;
+        private Label label3;
     }
 }

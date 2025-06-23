@@ -11,7 +11,7 @@ namespace Cantina_Senai
         public string Cliente { get; set; }
         public string Itens { get; set; }
         public string ParaViagem { get; set; }
-        public string Status {  get; set; }
+        public string Status { get; set; }
         public string Hora { get; set; } //= DateTime.Now.ToShortTimeString();
 
         public override string ToString()

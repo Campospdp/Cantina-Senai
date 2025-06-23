@@ -101,8 +101,8 @@ namespace Cantina_Senai
             {
                 if (f is Chamada)
                 {
-                    f.Focus();
-                    return;
+                    f.Close();
+                    break;
                 }
             }
 

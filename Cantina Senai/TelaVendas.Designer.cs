@@ -55,6 +55,8 @@
             label7 = new Label();
             label8 = new Label();
             btnCozinhaVendas = new Button();
+            button1 = new Button();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -289,7 +291,7 @@
             // 
             btnBalcaoVendas.BackColor = Color.FromArgb(230, 255, 0);
             btnBalcaoVendas.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBalcaoVendas.Location = new Point(59, 9);
+            btnBalcaoVendas.Location = new Point(61, 6);
             btnBalcaoVendas.Name = "btnBalcaoVendas";
             btnBalcaoVendas.Size = new Size(75, 23);
             btnBalcaoVendas.TabIndex = 28;
@@ -300,7 +302,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 12);
+            label7.Location = new Point(14, 12);
             label7.Name = "label7";
             label7.Size = new Size(41, 17);
             label7.TabIndex = 29;
@@ -309,7 +311,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 35);
+            label8.Location = new Point(14, 35);
             label8.Name = "label8";
             label8.Size = new Size(41, 17);
             label8.TabIndex = 30;
@@ -319,7 +321,7 @@
             // 
             btnCozinhaVendas.BackColor = Color.FromArgb(230, 255, 0);
             btnCozinhaVendas.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCozinhaVendas.Location = new Point(59, 32);
+            btnCozinhaVendas.Location = new Point(61, 29);
             btnCozinhaVendas.Name = "btnCozinhaVendas";
             btnCozinhaVendas.Size = new Size(75, 23);
             btnCozinhaVendas.TabIndex = 31;
@@ -327,12 +329,35 @@
             btnCozinhaVendas.UseVisualStyleBackColor = false;
             btnCozinhaVendas.Click += button1_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(230, 255, 0);
+            button1.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(61, 52);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 32;
+            button1.Text = "Chamada";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(14, 58);
+            label9.Name = "label9";
+            label9.Size = new Size(41, 17);
+            label9.TabIndex = 33;
+            label9.Text = "ADM:";
+            // 
             // TelaVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
+            Controls.Add(label9);
+            Controls.Add(button1);
             Controls.Add(btnCozinhaVendas);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -394,5 +419,7 @@
         private Label label7;
         private Label label8;
         private Button btnCozinhaVendas;
+        private Button button1;
+        private Label label9;
     }
 }

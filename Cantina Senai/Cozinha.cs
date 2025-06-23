@@ -91,5 +91,20 @@ namespace Cantina_Senai
             TelaVendas novaJanela = new TelaVendas();
             novaJanela.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Chamada)
+                {
+                    f.Close();
+                    break;
+                }
+            }
+
+            Chamada novaJanela = new Chamada();
+            novaJanela.Show();
+        }
     }
 }

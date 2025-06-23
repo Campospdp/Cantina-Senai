@@ -42,6 +42,7 @@
             label4 = new Label();
             btnCozinhaBalcao = new Button();
             btnChamada = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -61,12 +62,13 @@
             listEntregues.BackColor = Color.FromArgb(230, 255, 0);
             listEntregues.BorderStyle = BorderStyle.None;
             listEntregues.Enabled = false;
+            listEntregues.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listEntregues.ForeColor = SystemColors.GrayText;
             listEntregues.FormattingEnabled = true;
-            listEntregues.ItemHeight = 15;
+            listEntregues.ItemHeight = 17;
             listEntregues.Location = new Point(671, 216);
             listEntregues.Name = "listEntregues";
-            listEntregues.Size = new Size(396, 195);
+            listEntregues.Size = new Size(396, 187);
             listEntregues.TabIndex = 13;
             // 
             // label1
@@ -104,10 +106,11 @@
             // listPedido
             // 
             listPedido.BackColor = Color.FromArgb(230, 255, 0);
+            listPedido.Font = new Font("Inter Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listPedido.FormattingEnabled = true;
             listPedido.HorizontalScrollbar = true;
             listPedido.IntegralHeight = false;
-            listPedido.ItemHeight = 15;
+            listPedido.ItemHeight = 17;
             listPedido.Location = new Point(12, 216);
             listPedido.Name = "listPedido";
             listPedido.ScrollAlwaysVisible = true;
@@ -118,7 +121,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 12);
+            label7.Location = new Point(14, 12);
             label7.Name = "label7";
             label7.Size = new Size(41, 17);
             label7.TabIndex = 30;
@@ -128,7 +131,7 @@
             // 
             btnTelaVendasBalcao.BackColor = Color.FromArgb(230, 255, 0);
             btnTelaVendasBalcao.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTelaVendasBalcao.Location = new Point(59, 6);
+            btnTelaVendasBalcao.Location = new Point(61, 6);
             btnTelaVendasBalcao.Name = "btnTelaVendasBalcao";
             btnTelaVendasBalcao.Size = new Size(75, 23);
             btnTelaVendasBalcao.TabIndex = 31;
@@ -160,7 +163,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 35);
+            label4.Location = new Point(14, 35);
             label4.Name = "label4";
             label4.Size = new Size(41, 17);
             label4.TabIndex = 34;
@@ -170,7 +173,7 @@
             // 
             btnCozinhaBalcao.BackColor = Color.FromArgb(230, 255, 0);
             btnCozinhaBalcao.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCozinhaBalcao.Location = new Point(59, 31);
+            btnCozinhaBalcao.Location = new Point(61, 29);
             btnCozinhaBalcao.Name = "btnCozinhaBalcao";
             btnCozinhaBalcao.Size = new Size(75, 23);
             btnCozinhaBalcao.TabIndex = 35;
@@ -180,13 +183,25 @@
             // 
             // btnChamada
             // 
-            btnChamada.Location = new Point(55, 60);
+            btnChamada.BackColor = Color.FromArgb(230, 255, 0);
+            btnChamada.Font = new Font("Inter Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnChamada.Location = new Point(61, 52);
             btnChamada.Name = "btnChamada";
-            btnChamada.Size = new Size(79, 51);
+            btnChamada.Size = new Size(75, 23);
             btnChamada.TabIndex = 36;
-            btnChamada.Text = "button1";
-            btnChamada.UseVisualStyleBackColor = true;
+            btnChamada.Text = "Chamada";
+            btnChamada.UseVisualStyleBackColor = false;
             btnChamada.Click += btnChamada_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(14, 58);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 17);
+            label5.TabIndex = 37;
+            label5.Text = "ADM:";
             // 
             // Balcao
             // 
@@ -194,6 +209,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 241, 238);
             ClientSize = new Size(1079, 563);
+            Controls.Add(label5);
             Controls.Add(btnChamada);
             Controls.Add(btnCozinhaBalcao);
             Controls.Add(label4);
@@ -230,5 +246,6 @@
         private Label label4;
         private Button btnCozinhaBalcao;
         private Button btnChamada;
+        private Label label5;
     }
 }
